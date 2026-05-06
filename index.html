@@ -44,6 +44,31 @@ font-family:Arial,sans-serif;
 background:#f8fafc;
 color:#111827;
 overflow-x:hidden;
+position:relative;
+}
+
+/* BACKGROUND PARTICLES */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(circle at 20% 20%, rgba(236,72,153,0.08) 2px, transparent 2px),
+radial-gradient(circle at 80% 40%, rgba(139,92,246,0.08) 2px, transparent 2px),
+radial-gradient(circle at 40% 70%, rgba(59,130,246,0.08) 2px, transparent 2px);
+background-size:180px 180px;
+z-index:-1;
+animation:moveParticles 18s linear infinite;
+}
+
+@keyframes moveParticles{
+0%{
+transform:translateY(0px);
+}
+100%{
+transform:translateY(-180px);
+}
 }
 
 /* WARNING BAR */
@@ -85,6 +110,7 @@ gap:25px;
 text-decoration:none;
 color:#374151;
 font-weight:700;
+transition:0.3s;
 }
 
 .nav nav a:hover{
@@ -121,11 +147,12 @@ text-align:center;
 width:100%;
 max-width:560px;
 border-radius:30px;
-transition:0.3s;
+transition:0.4s;
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
 .hero-image img:hover{
-transform:scale(1.02);
+transform:scale(1.03);
 }
 
 /* RIGHT CONTENT */
@@ -149,6 +176,20 @@ color:#4b5563;
 margin-bottom:25px;
 }
 
+/* ONLINE BADGE */
+
+.online-badge{
+display:inline-block;
+background:#dcfce7;
+color:#166534;
+padding:12px 18px;
+border-radius:40px;
+font-size:16px;
+font-weight:800;
+margin-bottom:22px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
 /* BUTTON */
 
 .hero-button{
@@ -167,6 +208,28 @@ transition:0.3s;
 
 .hero-button:hover{
 transform:translateY(-5px) scale(1.03);
+}
+
+/* GAMES TITLE */
+
+.games-title{
+font-size:24px;
+font-weight:800;
+margin:20px 0;
+color:#7c3aed;
+animation:floatText 2s ease-in-out infinite;
+}
+
+@keyframes floatText{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-4px);
+}
+100%{
+transform:translateY(0px);
+}
 }
 
 /* MINI GAMES */
@@ -189,8 +252,11 @@ transition:0.3s;
 }
 
 .mini-card:hover{
-transform:translateY(-6px) scale(1.04);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-10px) scale(1.06);
+box-shadow:
+0 20px 40px rgba(0,0,0,0.15),
+0 0 25px rgba(236,72,153,0.35),
+0 0 45px rgba(139,92,246,0.25);
 }
 
 .mini-card img{
@@ -333,6 +399,8 @@ padding:14px 18px;
 
 <body>
 
+<div class="particles"></div>
+
 <!-- WARNING -->
 
 <div class="warning-bar">
@@ -368,7 +436,8 @@ Suru Games
 <div class="hero-image">
 
 <a href="https://m.me/SURUGAMES"
-target="_blank">
+target="_blank"
+onclick="fbq('track', 'Lead');">
 
 <img src="assets/banner.png"
 alt="Suru Games Banner">
@@ -390,6 +459,12 @@ Play exciting entertainment games instantly through Messenger.
 Safe, fun and skill-based gaming experience.
 </p>
 
+<div class="online-badge">
+🟢 Online 24/7 • Instant Access Available
+</div>
+
+<br>
+
 <a href="https://m.me/SURUGAMES"
 target="_blank"
 onclick="fbq('track', 'Lead');"
@@ -399,12 +474,17 @@ class="hero-button">
 
 </a>
 
+<div class="games-title">
+🎮 Tap Any Game To Start Playing
+</div>
+
 <!-- GAME LOGOS -->
 
 <div class="mini-games">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/juwa.png">
@@ -414,6 +494,7 @@ class="mini-card">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/gamevault.png">
@@ -423,6 +504,7 @@ class="mini-card">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/firekirin.png">
@@ -432,6 +514,7 @@ class="mini-card">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/orionstars.png">
@@ -441,6 +524,7 @@ class="mini-card">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/milkyway.png">
@@ -450,6 +534,7 @@ class="mini-card">
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="mini-card">
 
 <img src="assets/pandamaster.png">
@@ -501,6 +586,7 @@ Contact: admin@suru.games | +91 8866362533
 
 <a href="https://m.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="float-btn messenger">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg">
@@ -511,6 +597,7 @@ class="float-btn messenger">
 
 <a href="https://t.me/SURUGAMES"
 target="_blank"
+onclick="fbq('track', 'Lead');"
 class="float-btn telegram">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
