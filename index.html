@@ -113,10 +113,19 @@ align-items:center;
 
 /* LEFT IMAGE */
 
+.hero-image{
+text-align:center;
+}
+
 .hero-image img{
 width:100%;
 max-width:560px;
 border-radius:30px;
+transition:0.3s;
+}
+
+.hero-image img:hover{
+transform:scale(1.02);
 }
 
 /* RIGHT CONTENT */
@@ -201,32 +210,48 @@ color:#111827;
 
 .floating{
 position:fixed;
-right:20px;
+right:25px;
 top:50%;
 transform:translateY(-50%);
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:18px;
 z-index:9999;
 }
 
 .float-btn{
+display:flex;
+align-items:center;
+gap:12px;
 padding:16px 22px;
-border-radius:50px;
-font-size:18px;
-font-weight:800;
+border-radius:60px;
 text-decoration:none;
 color:white;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
+font-size:18px;
+font-weight:800;
+box-shadow:0 12px 30px rgba(0,0,0,0.25);
 animation:pulse 2s infinite;
+transition:0.3s;
+}
+
+.float-btn:hover{
+transform:scale(1.08);
+}
+
+.float-btn img{
+width:28px;
+height:28px;
+background:white;
+border-radius:50%;
+padding:4px;
 }
 
 .messenger{
-background:#0084FF;
+background:linear-gradient(90deg,#0084ff,#006fff);
 }
 
 .telegram{
-background:#229ED9;
+background:linear-gradient(90deg,#229ED9,#0f8ad0);
 }
 
 @keyframes pulse{
@@ -234,7 +259,7 @@ background:#229ED9;
 transform:scale(1);
 }
 50%{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 100%{
 transform:scale(1);
@@ -338,35 +363,21 @@ Suru Games
 
 <div class="hero-container">
 
-<!-- LEFT -->
+<!-- LEFT IMAGE -->
 
-<!-- FLOATING BUTTONS -->
-
-<div class="floating">
+<div class="hero-image">
 
 <a href="https://m.me/SURUGAMES"
-target="_blank"
-class="float-btn messenger">
+target="_blank">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg">
-
-<span>Messenger</span>
-
-</a>
-
-<a href="https://t.me/SURUGAMES"
-target="_blank"
-class="float-btn telegram">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
-
-<span>Telegram</span>
+<img src="assets/banner.png"
+alt="Suru Games Banner">
 
 </a>
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT CONTENT -->
 
 <div class="hero-content">
 
@@ -492,7 +503,9 @@ Contact: admin@suru.games | +91 8866362533
 target="_blank"
 class="float-btn messenger">
 
-💬 Messenger
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg">
+
+<span>Messenger</span>
 
 </a>
 
@@ -500,7 +513,9 @@ class="float-btn messenger">
 target="_blank"
 class="float-btn telegram">
 
-📩 Telegram
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+
+<span>Telegram</span>
 
 </a>
 
